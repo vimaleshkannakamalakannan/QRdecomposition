@@ -24,7 +24,56 @@ To implement QR decomposition algorithm using the Gram-Schmidt method.
 ## Program:
 ### Gram-Schmidt Method
 ```
+A = eval(input())
 
+cols = len(A[0])
+max_sum = 0
+
+for j in range(cols):
+    s = 0
+    for i in range(len(A)):
+        s += abs(A[i][j])
+    if s > max_sum:
+        max_sum = s
+
+print("{:.2f}".format(max_sum))
+
+A = eval(input())
+
+m = len(A)
+n = len(A[0])
+
+B = [[0 for j in range(n)] for i in range(n)]
+
+for i in range(n):
+    for j in range(n):
+        s = 0
+        for k in range(m):
+            s += A[k][i] * A[k][j]
+        B[i][j] = s
+
+trace = B[0][0] + B[1][1]
+det = B[0][0] * B[1][1] - B[0][1] * B[1][0]
+
+eigen = ((trace + (trace**2 - 4*det) ** 0.5) / 2) ** 0.5
+
+print("{:.2f}".format(eigen))
+
+
+
+A = eval(input())
+
+max_sum = 0
+
+for i in range(len(A)):
+    s = 0
+    for j in range(len(A[0])):
+        s += abs(A[i][j])
+
+    if s > max_sum:
+        max_sum = s
+
+print("{:.2f}".format(max_sum))
 
 
 
@@ -35,6 +84,9 @@ To implement QR decomposition algorithm using the Gram-Schmidt method.
 
 ## Output
 ```
+<img width="546" height="477" alt="image" src="https://github.com/user-attachments/assets/086eb816-7aed-49c3-821f-bb765232bb8f" />
+<img width="632" height="528" alt="image" src="https://github.com/user-attachments/assets/3e807f44-865d-40d5-a149-562da50abccd" />
+<img width="411" height="398" alt="image" src="https://github.com/user-attachments/assets/a838646e-99fe-476d-8b33-905ddbe9f20d" />
 
 ```
 
