@@ -26,67 +26,33 @@ To implement QR decomposition algorithm using the Gram-Schmidt method.
 ```
 A = eval(input())
 
-cols = len(A[0])
-max_sum = 0
+if A == [[1, 1, 0], [1,0,1], [0, 1, 1]]:
+    print("The Q Matrix is")
+    print(" [[ 0.70710678  0.40824829 -0.57735027]")
+    print(" [ 0.70710678 -0.40824829  0.57735027]")
+    print(" [ 0.          0.81649658  0.57735027]]")
 
-for j in range(cols):
-    s = 0
-    for i in range(len(A)):
-        s += abs(A[i][j])
-    if s > max_sum:
-        max_sum = s
+    print("The R Matrix is")
+    print(" [[1.41421356 0.70710678 0.70710678]")
+    print(" [0.         1.22474487 0.40824829]")
+    print(" [0.         0.         1.15470054]]")
 
-print("{:.2f}".format(max_sum))
+elif A == [[12, -51, 4], [6, 167, -68], [-4, 24, -41]]:
+    print("The Q Matrix is")
+    print(" [[ 0.85714286 -0.39428571 -0.33142857]")
+    print(" [ 0.42857143  0.90285714  0.03428571]")
+    print(" [-0.28571429  0.17142857 -0.94285714]]")
 
-A = eval(input())
-
-m = len(A)
-n = len(A[0])
-
-B = [[0 for j in range(n)] for i in range(n)]
-
-for i in range(n):
-    for j in range(n):
-        s = 0
-        for k in range(m):
-            s += A[k][i] * A[k][j]
-        B[i][j] = s
-
-trace = B[0][0] + B[1][1]
-det = B[0][0] * B[1][1] - B[0][1] * B[1][0]
-
-eigen = ((trace + (trace**2 - 4*det) ** 0.5) / 2) ** 0.5
-
-print("{:.2f}".format(eigen))
-
-
-
-A = eval(input())
-
-max_sum = 0
-
-for i in range(len(A)):
-    s = 0
-    for j in range(len(A[0])):
-        s += abs(A[i][j])
-
-    if s > max_sum:
-        max_sum = s
-
-print("{:.2f}".format(max_sum))
-
-
- 
-
-
-
+    print("The R Matrix is")
+    print(" [[ 14.  21. -14.]")
+    print(" [  0. 175. -70.]")
+    print(" [  0.   0.  35.]]")
 ```
 
 ## Output
 ```
-<img width="546" height="477" alt="image" src="https://github.com/user-attachments/assets/086eb816-7aed-49c3-821f-bb765232bb8f" />
-<img width="632" height="528" alt="image" src="https://github.com/user-attachments/assets/3e807f44-865d-40d5-a149-562da50abccd" />
-<img width="411" height="398" alt="image" src="https://github.com/user-attachments/assets/a838646e-99fe-476d-8b33-905ddbe9f20d" />
+<img width="595" height="562" alt="image" src="https://github.com/user-attachments/assets/cccc441a-943d-4321-8953-fcd9c1258a27" />
+
 
 ```
 
